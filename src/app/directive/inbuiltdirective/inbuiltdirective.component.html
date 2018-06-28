@@ -1,0 +1,60 @@
+<p>
+  inbuiltdirective works!
+</p>
+<!--
+<div>
+  <div *ngIf="friends.length>0">List of friends
+    <br>
+    <ul>
+      <li *ngFor="let one of friends; let counter=index">
+        
+        {{counter}} : {{one}}
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="friends.length==0">No friends</div>
+</div>-->
+<!--
+<div>
+  <div *ngIf="friends.length>0; else noFriends">List of friends
+    <br>
+    <ul>
+      <li *ngFor="let one of friends; let counter=index">
+        
+        {{counter}} : {{one}}
+      </li>
+    </ul>
+  </div>
+  <ng-template #noFriends>
+    No friends
+  </ng-template>
+</div>-->
+<div *ngIf="friends.length>0;then someFriends else noFriends"> </div>
+    <ng-template #someFriends>
+  List of friends
+    <br>
+    <ul>
+      <li *ngFor="let one of friends; let counter=index">
+        
+        {{counter}} : {{one}}
+      </li>
+    </ul>
+  </ng-template>
+  <ng-template #noFriends>
+    No friends
+  </ng-template>
+
+  <hr>
+  <h4>Switch Case</h4>
+  <ul>
+    <li [class.active]="name=='riya'"><a (click)="name='riya'"><button> Riya</button></a></li>
+    <li [class.active]="name=='diya'"><a (click)="name='diya'"><button>Diya</button></a></li>
+    <li [class.active]="name=='priya'"><a (click)="name='priya'"><button>Priya</button></a></li>
+
+  </ul>
+  <div [ngSwitch]="name">
+    <div *ngSwitchCase="'riya'">My name is Riya</div>
+    <div *ngSwitchCase="'diya'">My name is Diya</div>
+    <div *ngSwitchCase="'priya'">My name is Priya</div>
+    <div *ngSwitchDefault>My name is General</div>
+  </div>

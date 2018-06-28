@@ -1,0 +1,10 @@
+input[type="submit"]:disabled{
+    color: gray
+    
+
+}
+
+input[type="submit"]:hover{
+    color: greenyellow
+
+}
